@@ -3,146 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuminaLight - Modern Lighting Solutions</title>
+    <title>SunPower Africa | Solar Lighting Solutions</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
-        * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Raleway', sans-serif;}
-        :root {--gold: #D4AF37; --dark: #1a1a1a; --light: #f5f5f5;}
-        body {line-height: 1.6;}
-        
-        /* 导航栏 */
-        nav {position: fixed; width: 100%; padding: 1.5rem 5%; background: rgba(26,26,26,0.9); z-index: 1000;}
-        .nav-container {display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;}
-        .logo {font-size: 2rem; color: var(--gold); font-weight: 700; text-decoration: none;}
-        .nav-links a {color: white; margin-left: 2rem; text-decoration: none; opacity: 0.8; transition: opacity 0.3s;}
-        .nav-links a:hover {opacity: 1;}
-
-        /* 主视觉 */
-        .hero {height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://dummyimage.com/1920x1080/000/fff?text=Modern+Lighting'); background-size: cover; color: white; text-align: center; padding: 0 2rem;}
-        .hero-content h1 {font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px var(--dark);}
-        .hero-content p {font-size: 1.2rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;}
-
-        /* 产品分类 */
-        .categories {padding: 5rem 2rem; background: var(--light);}
-        .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;}
-        .category-card {position: relative; overflow: hidden; border-radius: 8px;}
-        .category-card img {width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s;}
-        .category-card:hover img {transform: scale(1.05);}
-        .category-text {padding: 1rem; text-align: center;}
-        .category-text h3 {color: var(--dark); margin-bottom: 0.5rem;}
-        .category-text p {color: #666;}
-
-        /* 特色产品 */
-        .featured {padding: 5rem 2rem; background: white;}
-        .featured-grid {display: grid; grid-template-columns: 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto;}
-        @media (min-width: 768px) {.featured-grid {grid-template-columns: repeat(2, 1fr);}}
-        .product-card {display: flex; align-items: center; gap: 2rem;}
-        .product-img {width: 40%; min-width: 200px; height: 300px; object-fit: cover; border-radius: 8px;}
-        .product-info h3 {color: var(--dark); margin-bottom: 0.5rem;}
-        .product-info p {color: #666; margin-bottom: 1rem;}
-        .price {color: var(--gold); font-size: 1.2rem; font-weight: 600;}
-
-        /* 页脚 */
-        footer {background: var(--dark); color: white; padding: 3rem 2rem; text-align: center;}
-        .footer-links {margin-bottom: 2rem;}
-        .footer-links a {color: white; margin: 0 1rem; text-decoration: none; opacity: 0.8;}
-        .footer-links a:hover {opacity: 1;}
-        .copyright {font-size: 0.9rem; color: #999;}
-
-        /* 响应式 */
-        @media (max-width: 768px) {
-            .nav-links {display: none;}
-            .hero-content h1 {font-size: 2.5rem;}
-            .product-card {flex-direction: column; text-align: center;}
-            .product-img {width: 80%;}
+        :root {
+            --sun-yellow: #FFD700;
+            --savanna-green: #2E8B57;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
         }
     </style>
 </head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">LuminaLight</a>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+<body class="font-roboto bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="text-2xl font-bold text-savanna-green">SunPower Africa</a>
+                <div class="md:flex items-center space-x-6 hidden">
+                    <a href="#products" class="hover:text-savanna-green">Products</a>
+                    <a href="#about" class="hover:text-savanna-green">About Us</a>
+                    <a href="#contact" class="hover:text-savanna-green">Contact</a>
+                </div>
+                <button id="menu-btn" class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl text-gray-600"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Illuminate Your Space</h1>
-            <p>Discover premium lighting solutions for modern living</p>
+    <!-- Hero Section -->
+    <section id="hero" class="bg-cover bg-center py-24" style="background-image: url('https://picsum.photos/1920/1080?random=1')">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Lighting Every Corner of Africa</h1>
+            <p class="text-lg mb-8">Durable · Efficient · Affordable | Solar Lighting Solutions</p>
+            <a href="#products" class="bg-savanna-green hover:bg-[#277b4a] text-white px-8 py-3 rounded-full shadow-lg">
+                Explore Products
+            </a>
         </div>
     </section>
 
-    <section class="categories" id="products">
-        <div class="grid">
-            <div class="category-card">
-                <img src="https://dummyimage.com/300x200/000/fff?text=Modern+Lights" alt="Modern Lighting">
-                <div class="category-text">
-                    <h3>Modern Design</h3>
-                    <p>Sleek contemporary lighting</p>
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12 text-savanna-green">Our Bestsellers</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                <img src="https://picsum.photos/400/300?random=2" alt="Solar Garden Light" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="font-bold text-lg mb-2">Savanna Pro Garden Light</h3>
+                <p class="text-sm text-gray-600">12hrs Runtime | IP65 Waterproof | Auto Dusk-to-Dawn</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-2xl font-bold text-sun-yellow">$49.99</span>
+                    <button class="bg-savanna-green text-white px-4 py-2 rounded-full hover:bg-[#277b4a]">
+                        Buy Now <i class="fas fa-shopping-cart ml-2"></i>
+                    </button>
                 </div>
             </div>
-            <div class="category-card">
-                <img src="https://dummyimage.com/300x200/000/fff?text=Industrial+Lights" alt="Industrial Lighting">
-                <div class="category-text">
-                    <h3>Industrial Style</h3>
-                    <p>Rustic and functional designs</p>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="https://dummyimage.com/300x200/000/fff?text=Vintage+Lights" alt="Vintage Lighting">
-                <div class="category-text">
-                    <h3>Vintage Collection</h3>
-                    <p>Timeless classic designs</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="featured">
-        <div class="featured-grid">
-            <div class="product-card">
-                <img src="https://dummyimage.com/200x300/000/fff?text=Featured+Light+1" alt="Featured Lamp">
-                <div class="product-info">
-                    <h3>Arc Floor Lamp</h3>
-                    <p>Adjustable modern floor lamp with brass finish</p>
-                    <div class="price">$299.99</div>
-                    <button style="padding: 0.8rem 2rem; background: var(--gold); color: white; border: none; border-radius: 4px; cursor: pointer;">Shop Now</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://dummyimage.com/200x300/000/fff?text=Featured+Light+2" alt="Featured Pendant">
-                <div class="product-info">
-                    <h3>Mid-Century Pendant</h3>
-                    <p>Retro inspired ceiling pendant light</p>
-                    <div class="price">$199.99</div>
-                    <button style="padding: 0.8rem 2rem; background: var(--gold); color: white; border: none; border-radius: 4px; cursor: pointer;">Shop Now</button>
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                <img src="https://picsum.photos/400/300?random=3" alt="Solar Flashlight" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="font-bold text-lg mb-2">Desert Warrior Flashlight</h3>
+                <p class="text-sm text-gray-600">500 Lumens | Solar+USB Dual Charge | Drop Resistant</p>
+                
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-2xl font-bold text-sun-yellow">$29.99</span>
+                    <button class="bg-savanna-green text-white px-4 py-2 rounded-full hover:bg-[#277b4a]">
+                        Buy Now <i class="fas fa-shopping-cart ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+            <img src="https://picsum.photos/800/600?random=4" alt="African Team" class="w-full md:w-1/2 rounded-lg shadow-lg">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-6 text-savanna-green">Our Mission</h2>
+                <p class="text-lg mb-4">Since 2018, we've powered 300,000+ African homes with clean light. Every lamp tested in Sahara 50℃ heat for extreme reliability.</p>
+                <ul class="list-disc pl-6 mb-6">
+                    <li>100% Locally Assembled</li>
+                    <li>5-Year Warranty</li>
+                    <li>22% Solar Conversion Rate</li>
+                </ul>
+            </div>
         </div>
-        <div class="copyright">
-            © 2025 LuminaLight. All rights reserved.
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12 text-savanna-green">Get in Touch</h2>
+        <form class="max-w-md mx-auto">
+            <div class="mb-4">
+                <input type="text" placeholder="Full Name" class="w-full border rounded-lg py-2 px-4 focus:outline-none focus:border-savanna-green">
+            </div>
+            <div class="mb-4">
+                <input type="email" placeholder="Email Address" class="w-full border rounded-lg py-2 px-4 focus:outline-none focus:border-savanna-green">
+            </div>
+            <div class="mb-6">
+                <textarea placeholder="Message" rows="4" class="w-full border rounded-lg py-2 px-4 focus:outline-none focus:border-savanna-green"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-savanna-green text-white py-3 px-6 rounded-full hover:bg-[#277b4a] shadow-lg transition-colors">
+                Send Message <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-savanna-green text-white py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <a href="/" class="text-xl font-bold">SunPower Africa</a>
+                <p class="text-sm">© 2025 | Solar Lighting Pioneers</p>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="#"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
         </div>
-    </footer>
+    </footer></footer>
 
     <script>
-        // 滚动时固定导航栏
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            nav.style.background = window.scrollY > 50 ? 'var(--dark)' : 'rgba(26,26,26,0.9)';
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.querySelector('.md:hidden').classList.toggle('hidden');
         });
     </script>
 </body>
