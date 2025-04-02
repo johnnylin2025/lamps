@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SunPower Africa - Contact Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -19,6 +19,93 @@
     </style>
 </head>
 
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="font-roboto bg-gray-50 text-gray-800">
     <!-- Navbar -->
-    <nav
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-bold text-savanna-green">SunPower Africa</a>
+                <div class="md:flex items-center space-x-6 hidden">
+                    <a href="index.html#products" class="hover:text-savanna-green">Products</a>
+                    <a href="index.html#about" class="hover:text-savanna-green">About Us</a>
+                    <a href="contact.html" class="hover:text-savanna-green">Contact</a>
+                </div>
+                <button id="menu-btn" class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <a href="index.html" class="block py-2 px-4 hover:bg-gray-100">Home</a>
+            <a href="index.html#products" class="block py-2 px-4 hover:bg-gray-100">Products</a>
+            <a href="index.html#about" class="block py-2 px-4 hover:bg-gray-100">About Us</a>
+            <a href="contact.html" class="block py-2 px-4 hover:bg-gray-100">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12 text-savanna-green">Get in Touch</h2>
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Contact Form -->
+            <div class="md:w-1/2">
+                <form class="max-w-md mx-auto">
+                    <div class="mb-4">
+                        <input type="text" placeholder="Full Name"
+                            class="w-full border rounded-lg py-2 px-4 focus:outline-none focus:border-savanna-green">
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" placeholder="Email Address"
+                            class="w-full border rounded-lg py-2 px-4 focus:outline-none focus:border-savanna-green">
+                    </div>
+                    <div class="mb-6">
+                        <textarea placeholder="Message" rows="4"
+                            class="w-full border rounded-lg py-2 px-4 focus:outline-none focus:border-savanna-green"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-savanna-green text-white py-3 px-6 rounded-full hover:bg-[#277b4a] shadow-lg transition-colors">
+                        Send Message <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+            <!-- Contact Information -->
+            <div class="md:w-1/2">
+                <h3 class="text-2xl font-bold mb-4 text-savanna-green">Contact Information</h3>
+                <p class="mb-4">If you have any questions, suggestions, or just want to say hello, feel free to reach out
+                    to us using the form on the left or the details below.</p>
+                <ul class="list-none">
+                    <li class="mb-2"><i class="fas fa-map-marker-alt text-savanna-green mr-2"></i>123 Solar Street,
+                        Nairobi, Kenya</li>
+                    <li class="mb-2"><i class="fas fa-phone text-savanna-green mr-2"></i>+254 712 345 678</li>
+                    <li class="mb-2"><i class="fas fa-envelope text-savanna-green mr-2"></i>info@sunpowerafrica.com</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-savanna-green text-white py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <a href="index.html" class="text-xl font-bold">SunPower Africa</a>
+                <p class="text-sm">© 2025 | Solar Lighting Pioneers</p>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="#"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
