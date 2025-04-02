@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunPower Africa - Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sun-yellow: #FFD700;
+            --savanna-green: #2E8B57;
+        }
+
+        .custom-shadow {
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-bold text-savanna-green">SunPower Africa</a>
+                <div class="md:flex items-center space-x-6 hidden">
+                    <a href="index.html" class="hover:text-savanna-green">Home</a>
+                    <a href="products.html" class="hover:text-savanna-green">Products</a>
+                    <a href="about.html" class="hover:text-savanna-green">About Us</a>
+                    <a href="contact.html" class="hover:text-savanna-green">Contact</a>
+                </div>
+                <button id="menu-btn" class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <a href="index.html" class="block py-2 px-4 hover:bg-gray-100">Home</a>
+            <a href="products.html" class="block py-2 px-4 hover:bg-gray-100">Products</a>
+            <a href="about.html" class="block py-2 px-4 hover:bg-gray-100">About Us</a>
+            <a href="contact.html" class="block py-2 px-4 hover:bg-gray-100">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12 text-savanna-green">Our Bestsellers</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                <img src="https://picsum.photos/400/300?random=2" alt="Solar Garden Light" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="font-bold text-lg mb-2">Savanna Pro Garden Light</h3>
+                <p class="text-sm text-gray-600">12hrs Runtime | IP65 Waterproof | Auto Dusk-to-Dawn</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-2xl font-bold text-sun-yellow">$49.99</span>
+                    <button class="bg-savanna-green text-white px-4 py-2 rounded-full hover:bg-[#277b4a]">
+                        Buy Now <i class="fas fa-shopping-cart ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                <img src="https://picsum.photos/400/300?random=3" alt="Solar Flashlight" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="font-bold text-lg mb-2">Desert Warrior Flashlight</h3>
+                <p class="text-sm text-gray-600">500 Lumens | Solar+USB Dual Charge | Drop Resistant</p>
+
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-2xl font-bold text-sun-yellow">$29.99</span>
+                    <button class="bg-savanna-green text-white px-4 py-2 rounded-full hover:bg-[#277b4a]">
+                        Buy Now <i class="fas fa-shopping-cart ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-savanna-green text-white py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <a href="index.html" class="text-xl font-bold">SunPower Africa</a>
+                <p class="text-sm">© 2025 | Solar Lighting Pioneers</p>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="#"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
