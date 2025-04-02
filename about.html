@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunPower Africa - About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sun-yellow: #FFD700;
+            --savanna-green: #2E8B57;
+        }
+
+        .custom-shadow {
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-bold text-savanna-green">SunPower Africa</a>
+                <div class="md:flex items-center space-x-6 hidden">
+                    <a href="index.html" class="hover:text-savanna-green">Home</a>
+                    <a href="products.html" class="hover:text-savanna-green">Products</a>
+                    <a href="about.html" class="hover:text-savanna-green">About Us</a>
+                    <a href="contact.html" class="hover:text-savanna-green">Contact</a>
+                </div>
+                <button id="menu-btn" class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <a href="index.html" class="block py-2 px-4 hover:bg-gray-100">Home</a>
+            <a href="products.html" class="block py-2 px-4 hover:bg-gray-100">Products</a>
+            <a href="about.html" class="block py-2 px-4 hover:bg-gray-100">About Us</a>
+            <a href="contact.html" class="block py-2 px-4 hover:bg-gray-100">Contact</a>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+            <img src="https://picsum.photos/800/600?random=4" alt="African Team" class="w-full md:w-1/2 rounded-lg shadow-lg">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-6 text-savanna-green">Our Mission</h2>
+                <p class="text-lg mb-4">Since 2018, we've powered 300,000+ African homes with clean light. Every lamp tested in Sahara 50℃ heat for extreme reliability.</p>
+                <ul class="list-disc pl-6 mb-6">
+                    <li>100% Locally Assembled</li>
+                    <li>5-Year Warranty</li>
+                    <li>22% Solar Conversion Rate</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-savanna-green text-white py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <a href="index.html" class="text-xl font-bold">SunPower Africa</a>
+                <p class="text-sm">© 2025 | Solar Lighting Pioneers</p>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="#"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
